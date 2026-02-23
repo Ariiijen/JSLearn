@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selection Structures – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 6</div>
+  <h1>🔀 <span>Selection Structures</span></h1>
+  <p>Use <code>if</code>, <code>if-else</code>, and <code>else if</code> to control which code runs based on conditions.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#if">if Statement</a></li>
+      <li><a href="#if-else">if-else Statement</a></li>
+      <li><a href="#else-if">else if Statement</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <div class="section-block" id="if">
+      <h2>if Statement</h2>
+      <p>Runs a block of code only when the condition is <code>true</code>.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">if</span> (condition) {
+  <span class="cm">// code runs if condition is true</span>
+}</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> score = <span class="num">85</span>;
+<span class="kw">if</span> (score >= <span class="num">75</span>) {
+  <span class="fn">alert</span>(<span class="str">"You passed!"</span>);
+}</div>
+    </div>
+
+    <div class="section-block" id="if-else">
+      <h2>if-else Statement</h2>
+      <p>Runs one block if the condition is true, and a different block if it's false.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">if</span> (condition) {
+  <span class="cm">// runs when true</span>
+} <span class="kw">else</span> {
+  <span class="cm">// runs when false</span>
+}</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> score = <span class="num">60</span>;
+<span class="kw">if</span> (score >= <span class="num">75</span>) {
+  <span class="fn">alert</span>(<span class="str">"You passed!"</span>);
+} <span class="kw">else</span> {
+  <span class="fn">alert</span>(<span class="str">"You failed. Try again."</span>);
+}</div>
+    </div>
+
+    <div class="section-block" id="else-if">
+      <h2>else if Statement</h2>
+      <p>Check multiple conditions in sequence. The first true condition runs its block.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">if</span> (condition1) {
+  <span class="cm">// runs if condition1 is true</span>
+} <span class="kw">else if</span> (condition2) {
+  <span class="cm">// runs if condition2 is true</span>
+} <span class="kw">else</span> {
+  <span class="cm">// runs if none are true</span>
+}</div>
+      <div class="example-label">Example — Grade Checker</div>
+      <div class="code-block"><span class="kw">var</span> score = <span class="num">88</span>;
+<span class="kw">if</span> (score >= <span class="num">90</span>) {
+  <span class="fn">alert</span>(<span class="str">"Grade: A"</span>);
+} <span class="kw">else if</span> (score >= <span class="num">80</span>) {
+  <span class="fn">alert</span>(<span class="str">"Grade: B"</span>);
+} <span class="kw">else if</span> (score >= <span class="num">75</span>) {
+  <span class="fn">alert</span>(<span class="str">"Grade: C"</span>);
+} <span class="kw">else</span> {
+  <span class="fn">alert</span>(<span class="str">"Grade: F — Below passing"</span>);
+}</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Grade Checker</h2>
+      <p>Enter a score (0–100) and the program will evaluate which grade you get.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <label style="font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px;">Enter score (0 – 100):</label>
+        <input type="number" id="score-input" class="tryit-input" min="0" max="100" value="85"/>
+        <button class="btn-run" onclick="runGrade()">▶ Check Grade</button>
+        <button class="btn-clear" onclick="clearGrade()">✕ Clear</button>
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="grade-output">Enter a score and click Check Grade...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="operators.html" class="btn-nav">← Operators</a>
+  <a href="loops.html" class="btn-nav">Next: Loops →</a>
+</div>
+
+<script src="../assets/js/selection.js"></script>
+</body>
+</html>

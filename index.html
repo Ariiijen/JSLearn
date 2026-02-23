@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS Learn – Module 4</title>
+  <link rel="stylesheet" href="./assets/css/styles.css"/>
+</head>
+<body>
+
+<div id="toast-container"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">JS<span>Learn</span></div>
+
+  <ul class="nav-center">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li class="dropdown">
+      <a href="#">Topics ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="./pages/embedding.html">Embedding JavaScript</a></li>
+        <li><a href="./pages/message-boxes.html">Message Boxes</a></li>
+        <li><a href="./pages/variables.html">Variables</a></li>
+        <li><a href="./pages/data-types.html">Data Types</a></li>
+        <li><a href="./pages/operators.html">Operators</a></li>
+        <li><a href="./pages/selection.html">Selection Structures</a></li>
+        <li><a href="./pages/loops.html">Loops</a></li>
+        <li><a href="./pages/dom.html">JavaScript DOM</a></li>
+        <li><a href="./pages/json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="#contact" class="nav-contact">Contact Me</a>
+  </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()">☰</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="./pages/embedding.html">📌 Embedding JavaScript</a>
+  <a href="./pages/message-boxes.html">💬 Message Boxes</a>
+  <a href="./pages/variables.html">📦 Variables</a>
+  <a href="./pages/data-types.html">🔢 Data Types</a>
+  <a href="./pages/operators.html">⚙️ Operators</a>
+  <a href="./pages/selection.html">🔀 Selection Structures</a>
+  <a href="./pages/loops.html">🔁 Loops</a>
+  <a href="./pages/dom.html">🌲 JavaScript DOM</a>
+  <a href="./pages/json.html">📄 JSON</a>
+  <a href="#contact" onclick="toggleMobile()" style="color:var(--yellow)">Contact Me</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Web Systems</div>
+  <h1>Make it <em>Interactive!</em></h1>
+  <p class="hero-sub">JavaScript brings your static web pages to life — dynamic content, real-time interactions, and powerful data handling. Start from scratch and build up your skills.</p>
+  <div class="hero-btns">
+    <a href="./pages/embedding.html" class="btn-primary">Start Learning →</a>
+    <a href="#topics" class="btn-secondary">Browse Topics</a>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="intro-text">
+    <h2>What is JavaScript?</h2>
+    <p>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.</p>
+    <p>Created in just <strong>10 days</strong> in May 1995 by <strong>Brendan Eich</strong> at Netscape, it became a standard in 1997 when adopted by ECMA — hence the official name <strong>ECMAScript</strong>.</p>
+    <p>Versions: ES1, ES2, ES3, ES5, ES6. Since 2016, versions are named by year (ES2016, ES2017...).</p>
+  </div>
+  <div class="intro-stats">
+    <div class="stat-card"><span class="stat-num">10</span><span class="stat-label">Days to Create</span></div>
+    <div class="stat-card"><span class="stat-num">1995</span><span class="stat-label">Year Created</span></div>
+    <div class="stat-card"><span class="stat-num">ES6+</span><span class="stat-label">Modern Standard</span></div>
+    <div class="stat-card"><span class="stat-num">9</span><span class="stat-label">Topics</span></div>
+    <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Browsers</span></div>
+    <div class="stat-card"><span class="stat-num">#1</span><span class="stat-label">Web Language</span></div>
+  </div>
+</section>
+
+<!-- TOPICS GRID -->
+<section class="topics-section" id="topics">
+  <h2 class="section-title">Topics in this Module</h2>
+  <div class="topics-grid">
+
+    <a href="./pages/embedding.html" class="topic-card">
+      <div class="topic-num">TOPIC 01</div><div class="topic-icon">📌</div>
+      <h3>Embedding JavaScript</h3>
+      <p>Add JS to HTML using &lt;script&gt; tags in the &lt;head&gt;, &lt;body&gt;, or as an external .js file linked with src="".</p>
+      <span class="topic-tag">Basics</span>
+    </a>
+
+    <a href="topics/message-boxes.html" class="topic-card">
+      <div class="topic-num">TOPIC 02</div><div class="topic-icon">💬</div>
+      <h3>Message Boxes</h3>
+      <p>Use <code>alert()</code>, <code>confirm()</code>, and <code>prompt()</code> to interact with users through browser popup dialogs.</p>
+      <span class="topic-tag">Interaction</span>
+    </a>
+
+    <a href="./pages/variables.html" class="topic-card">
+      <div class="topic-num">TOPIC 03</div><div class="topic-icon">📦</div>
+      <h3>Variables</h3>
+      <p>Declare and use variables with <code>var</code>. Understand global scope vs. local scope inside functions.</p>
+      <span class="topic-tag">Fundamentals</span>
+    </a>
+
+    <a href="./pages/data-types.html" class="topic-card">
+      <div class="topic-num">TOPIC 04</div><div class="topic-icon">🔢</div>
+      <h3>Data Types</h3>
+      <p>Explore String, Number, Boolean, Object, Array, Null & Undefined — JS is loosely typed so no type declaration needed.</p>
+      <span class="topic-tag">Fundamentals</span>
+    </a>
+
+    <a href="./pages/operators.html" class="topic-card">
+      <div class="topic-num">TOPIC 05</div><div class="topic-icon">⚙️</div>
+      <h3>Operators</h3>
+      <p>Arithmetic, comparison (==, ===), logical (&&, ||, !), and assignment (+=, -=) operators with live examples.</p>
+      <span class="topic-tag">Logic</span>
+    </a>
+
+    <a href="./pages/selection.html" class="topic-card">
+      <div class="topic-num">TOPIC 06</div><div class="topic-icon">🔀</div>
+      <h3>Selection Structures</h3>
+      <p>Control program flow using <code>if</code>, <code>if-else</code>, and <code>else if</code> conditional statements.</p>
+      <span class="topic-tag">Control Flow</span>
+    </a>
+
+    <a href="./pages/loops.html" class="topic-card">
+      <div class="topic-num">TOPIC 07</div><div class="topic-icon">🔁</div>
+      <h3>Loops</h3>
+      <p>Repeat code with <code>for</code>, <code>while</code>, and <code>for...of</code> loops. Iterate over strings, arrays, and maps.</p>
+      <span class="topic-tag">Control Flow</span>
+    </a>
+
+    <a href="./pages/dom.html" class="topic-card">
+      <div class="topic-num">TOPIC 08</div><div class="topic-icon">🌲</div>
+      <h3>JavaScript DOM</h3>
+      <p>Access and modify HTML elements using <code>getElementById()</code>, <code>querySelector()</code>, and <code>createElement()</code>.</p>
+      <span class="topic-tag">DOM</span>
+    </a>
+
+    <a href="./pages/json.html" class="topic-card">
+      <div class="topic-num">TOPIC 09</div><div class="topic-icon">📄</div>
+      <h3>JSON</h3>
+      <p>Store and exchange data with JavaScript Object Notation. Use <code>JSON.parse()</code> and <code>JSON.stringify()</code>.</p>
+      <span class="topic-tag">Data</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="footer-brand">JS<span>Learn</span></div>
+  <p class="footer-tagline">Module 4 · JavaScript Fundamentals · Built with pure HTML, CSS &amp; JS</p>
+
+  <div class="footer-links">
+
+    <!-- GitHub -->
+    <a href="https://github.com/Ariiijen" target="_blank" rel="noopener" class="footer-link" title="Visit my GitHub">
+      <svg viewBox="0 0 24 24"><path class="fi" d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/lluv.allyy" target="_blank" rel="noopener" class="footer-link" title="Visit my Facebook">
+      <svg viewBox="0 0 24 24"><path class="fi" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </a>
+
+    <!-- Vercel / Live Demo -->
+    <a href="https://your-project.vercel.app" target="_blank" rel="noopener" class="footer-link" title="View Live on Vercel">
+      <svg viewBox="0 0 24 24"><path class="fi" d="M24 22.525H0l12-21.05 12 21.05z"/></svg>
+      Live Demo
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:espragera.allyza@gmail.com" class="footer-link" title="Send me an email">
+      <svg viewBox="0 0 24 24">
+        <rect class="fs" x="2" y="4" width="20" height="16" rx="2"/>
+        <path class="fs" d="M2 7l10 7 10-7"/>
+      </svg>
+      Email Me
+    </a>
+
+    <a href="https://github.com/Ariiijen/JSLearn" class="footer-link" title="Source Code">
+      <svg viewBox="0 0 24 24"><path class="fi" d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      Source Code
+    </a>
+
+  </div>
+
+  <div class="footer-divider"></div>
+  <p class="footer-copy">© 2026 JSLearn · Ariiijen · All rights reserved</p>
+  <p class="footer-copy">Built with pure HTML, CSS &amp; JS</p>
+  <p class="footer-copy">Designed for learning and demonstration purposes</p>
+</footer>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

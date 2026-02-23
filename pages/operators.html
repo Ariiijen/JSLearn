@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Operators – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 5</div>
+  <h1>⚙️ <span>Operators</span></h1>
+  <p>Operators perform operations on values. JavaScript has arithmetic, comparison, logical, and assignment operators.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#arithmetic">Arithmetic</a></li>
+      <li><a href="#comparison">Comparison</a></li>
+      <li><a href="#logical">Logical</a></li>
+      <li><a href="#assignment">Assignment</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <div class="section-block" id="arithmetic">
+      <h2>Arithmetic Operators</h2>
+      <p>Perform mathematical calculations on numbers.</p>
+      <table class="data-table">
+        <tr><th>Operator</th><th>Name</th><th>Example</th><th>Result</th></tr>
+        <tr><td><code>+</code></td><td>Addition</td><td><code>5 + 10</code></td><td>15</td></tr>
+        <tr><td><code>-</code></td><td>Subtraction</td><td><code>10 - 5</code></td><td>5</td></tr>
+        <tr><td><code>*</code></td><td>Multiplication</td><td><code>5 * 10</code></td><td>50</td></tr>
+        <tr><td><code>/</code></td><td>Division</td><td><code>10 / 5</code></td><td>2</td></tr>
+        <tr><td><code>%</code></td><td>Modulus</td><td><code>5 % 2</code></td><td>1</td></tr>
+        <tr><td><code>++</code></td><td>Increment</td><td><code>x++</code></td><td>x + 1</td></tr>
+        <tr><td><code>--</code></td><td>Decrement</td><td><code>x--</code></td><td>x - 1</td></tr>
+      </table>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> x = <span class="num">5</span>, y = <span class="num">10</span>;
+x + y   <span class="cm">// 15</span>
+y - x   <span class="cm">// 5</span>
+x * y   <span class="cm">// 50</span>
+y / x   <span class="cm">// 2</span>
+x % <span class="num">2</span>   <span class="cm">// 1  (remainder of 5÷2)</span></div>
+    </div>
+
+    <div class="section-block" id="comparison">
+      <h2>Comparison Operators</h2>
+      <p>Compare two values and return <code>true</code> or <code>false</code>.</p>
+      <table class="data-table">
+        <tr><th>Operator</th><th>Name</th><th>Example</th><th>Result</th></tr>
+        <tr><td><code>==</code></td><td>Equal (value)</td><td><code>5 == "5"</code></td><td>true</td></tr>
+        <tr><td><code>===</code></td><td>Equal (value + type)</td><td><code>5 === "5"</code></td><td>false</td></tr>
+        <tr><td><code>!=</code></td><td>Not equal</td><td><code>5 != 10</code></td><td>true</td></tr>
+        <tr><td><code>&gt;</code></td><td>Greater than</td><td><code>10 &gt; 5</code></td><td>true</td></tr>
+        <tr><td><code>&lt;</code></td><td>Less than</td><td><code>5 &lt; 10</code></td><td>true</td></tr>
+        <tr><td><code>&gt;=</code></td><td>Greater than or equal</td><td><code>5 &gt;= 5</code></td><td>true</td></tr>
+      </table>
+    </div>
+
+    <div class="section-block" id="logical">
+      <h2>Logical Operators</h2>
+      <p>Combine multiple conditions.</p>
+      <table class="data-table">
+        <tr><th>Operator</th><th>Name</th><th>Example</th><th>Result</th></tr>
+        <tr><td><code>&&</code></td><td>AND — both must be true</td><td><code>(5 &lt; 10) && (3 &gt; 1)</code></td><td>true</td></tr>
+        <tr><td><code>||</code></td><td>OR — at least one true</td><td><code>(5 &gt; 10) || (3 &gt; 1)</code></td><td>true</td></tr>
+        <tr><td><code>!</code></td><td>NOT — reverses value</td><td><code>!(5 &lt; 10)</code></td><td>false</td></tr>
+      </table>
+    </div>
+
+    <div class="section-block" id="assignment">
+      <h2>Assignment Operators</h2>
+      <p>Assign or update a variable's value.</p>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> x = <span class="num">5</span>;
+x += <span class="num">1</span>;   <span class="cm">// x = 6   (same as x = x + 1)</span>
+x -= <span class="num">1</span>;   <span class="cm">// x = 5</span>
+x *= <span class="num">5</span>;   <span class="cm">// x = 25</span>
+x /= <span class="num">5</span>;   <span class="cm">// x = 5</span>
+x %= <span class="num">2</span>;   <span class="cm">// x = 1   (remainder)</span></div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Calculator</h2>
+      <p>Enter two numbers and pick an operator to see the result.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px;">
+          <input type="number" id="op-a" class="tryit-input" style="width:100px;" value="10"/>
+          <select id="op-sel" style="background:var(--code-bg);color:var(--text);border:1px solid var(--border);padding:9px 12px;border-radius:6px;font-size:1rem;">
+            <option>+</option><option>-</option><option>*</option><option>/</option><option>%</option>
+            <option>==</option><option>===</option><option>!=</option><option>&gt;</option><option>&lt;</option>
+            <option>&&</option><option>||</option>
+          </select>
+          <input type="number" id="op-b" class="tryit-input" style="width:100px;" value="3"/>
+        </div>
+        <button class="btn-run" onclick="runOperator()">▶ Calculate</button>
+        <button class="btn-clear" onclick="clearOperator()">✕ Clear</button>
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="op-output">Output will appear here...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="data-types.html" class="btn-nav">← Data Types</a>
+  <a href="selection.html" class="btn-nav">Next: Selection Structures →</a>
+</div>
+
+<script src="../assets/js/operators.js"></script>
+</body>
+</html>

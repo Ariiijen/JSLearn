@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Variables – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 3</div>
+  <h1>📦 <span>Variables</span></h1>
+  <p>A variable stores a data value that can change. Use the <code>var</code> keyword to declare variables in JavaScript.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#declaring">Declaring Variables</a></li>
+      <li><a href="#scope">Variable Scope</a></li>
+      <li><a href="#rules">Naming Rules</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <!-- DECLARING -->
+    <div class="section-block" id="declaring">
+      <h2>Declaring Variables</h2>
+      <p>Use the <code>var</code> keyword to declare a variable. You can declare with or without an initial value.</p>
+
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> variableName;
+<span class="kw">var</span> variableName = value;</div>
+
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> status;                  <span class="cm">// declared, no value yet</span>
+<span class="kw">var</span> age = <span class="num">20</span>;                <span class="cm">// number value</span>
+<span class="kw">var</span> name = <span class="str">"Alice"</span>;           <span class="cm">// string value</span>
+<span class="kw">var</span> isStudent = <span class="kw">true</span>;        <span class="cm">// boolean value</span>
+
+<span class="fn">alert</span>(name + <span class="str">" is "</span> + age);  <span class="cm">// "Alice is 20"</span></div>
+    </div>
+
+    <!-- SCOPE -->
+    <div class="section-block" id="scope">
+      <h2>Variable Scope</h2>
+      <p>Scope determines where a variable can be accessed in your code.</p>
+
+      <div class="syntax-label">Global vs Local</div>
+      <div class="code-block"><span class="kw">var</span> greet = <span class="str">"Hello "</span>;  <span class="cm">// GLOBAL — accessible anywhere</span>
+
+<span class="kw">function</span> <span class="fn">sayHello</span>() {
+  <span class="kw">var</span> name = <span class="str">"Vince!"</span>;  <span class="cm">// LOCAL — only inside this function</span>
+  <span class="fn">alert</span>(greet + name); <span class="cm">// ✅ works: "Hello Vince!"</span>
+}
+
+<span class="fn">sayHello</span>();
+<span class="fn">alert</span>(greet);  <span class="cm">// ✅ works: "Hello "</span>
+<span class="fn">alert</span>(name);   <span class="cm">// ❌ ERROR: name is not defined here</span></div>
+
+      <table class="data-table">
+        <tr><th>Type</th><th>Where declared</th><th>Accessible</th></tr>
+        <tr><td>Global</td><td>Outside any function</td><td>Anywhere in the script</td></tr>
+        <tr><td>Local</td><td>Inside a function</td><td>Only inside that function</td></tr>
+      </table>
+    </div>
+
+    <!-- RULES -->
+    <div class="section-block" id="rules">
+      <h2>Naming Rules</h2>
+      <ul>
+        <li>Variable names are <strong>case-sensitive</strong> — <code>name</code> and <code>NAME</code> are different variables</li>
+        <li>Can contain letters, digits, <code>$</code>, and <code>_</code></li>
+        <li>Cannot start with a digit (e.g. <code>1score</code> is invalid)</li>
+        <li>Cannot use reserved keywords like <code>var</code>, <code>function</code>, <code>return</code></li>
+      </ul>
+      <div class="example-label" style="margin-top:14px;">Valid vs Invalid Names</div>
+      <div class="code-block"><span class="cm">// ✅ Valid names</span>
+<span class="kw">var</span> myName;
+<span class="kw">var</span> score1;
+<span class="kw">var</span> _private;
+<span class="kw">var</span> $price;
+
+<span class="cm">// ❌ Invalid names</span>
+<span class="kw">var</span> <span class="num">1score</span>;      <span class="cm">// starts with digit</span>
+<span class="kw">var</span> my-name;     <span class="cm">// hyphens not allowed</span>
+<span class="kw">var</span> <span class="kw">function</span>;   <span class="cm">// reserved keyword</span></div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Variable Sandbox</h2>
+      <p>Enter a variable name and value, then click Run to see it output.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+          <div>
+            <label style="font-size:0.82rem;color:var(--muted);">Variable Name</label>
+            <input type="text" id="var-name" class="tryit-input" placeholder="e.g. myName" value="myName"/>
+          </div>
+          <div>
+            <label style="font-size:0.82rem;color:var(--muted);">Value</label>
+            <input type="text" id="var-value" class="tryit-input" placeholder="e.g. Alice" value="Alice"/>
+          </div>
+        </div>
+        <button class="btn-run" onclick="runVariable()">▶ Run</button>
+        <button class="btn-clear" onclick="clearVariable()">✕ Clear</button>
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="var-output">Output will appear here...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="message-boxes.html" class="btn-nav">← Message Boxes</a>
+  <a href="data-types.html" class="btn-nav">Next: Data Types →</a>
+</div>
+
+<script src="../assets/js/variables.js"></script>
+</body>
+</html>

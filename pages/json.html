@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JSON – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 9</div>
+  <h1>📄 <span>JSON</span></h1>
+  <p>JavaScript Object Notation — a lightweight, text-based format for storing and exchanging data between systems.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#what-json">What is JSON?</a></li>
+      <li><a href="#syntax">JSON Syntax</a></li>
+      <li><a href="#types">JSON Data Types</a></li>
+      <li><a href="#parse">JSON.parse()</a></li>
+      <li><a href="#stringify">JSON.stringify()</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <div class="section-block" id="what-json">
+      <h2>What is JSON?</h2>
+      <p>JSON stands for <strong>JavaScript Object Notation</strong>. It is a lightweight text format designed for human-readable data exchange. Key facts:</p>
+      <ul>
+        <li>File extension: <code>.json</code></li>
+        <li>Media type: <code>application/json</code></li>
+        <li>Created by Douglas Crockford</li>
+        <li>Used by web APIs to send/receive data</li>
+        <li>Readable by almost every programming language</li>
+      </ul>
+    </div>
+
+    <div class="section-block" id="syntax">
+      <h2>JSON Syntax Rules</h2>
+      <ul>
+        <li>Data is in <strong>name : value</strong> pairs</li>
+        <li>Names (keys) must always be in <strong>double quotes</strong></li>
+        <li>Objects are wrapped in <code>{ }</code></li>
+        <li>Arrays are wrapped in <code>[ ]</code></li>
+        <li>Items are separated by commas</li>
+      </ul>
+      <div class="example-label">Example JSON Structure</div>
+      <div class="code-block">{
+  <span class="str">"student"</span>: {
+    <span class="str">"name"</span>: <span class="str">"Alice Johnson"</span>,
+    <span class="str">"age"</span>: <span class="num">20</span>,
+    <span class="str">"enrolled"</span>: <span class="kw">true</span>,
+    <span class="str">"courses"</span>: [<span class="str">"Math"</span>, <span class="str">"IT"</span>, <span class="str">"Science"</span>]
+  }
+}</div>
+    </div>
+
+    <div class="section-block" id="types">
+      <h2>JSON Data Types</h2>
+      <table class="data-table">
+        <tr><th>Type</th><th>Example</th></tr>
+        <tr><td>String</td><td><code>"name": "Alice"</code></td></tr>
+        <tr><td>Number</td><td><code>"age": 20</code></td></tr>
+        <tr><td>Boolean</td><td><code>"active": true</code></td></tr>
+        <tr><td>Array</td><td><code>"courses": ["Math","IT"]</code></td></tr>
+        <tr><td>Object</td><td><code>"address": { "city": "Manila" }</code></td></tr>
+        <tr><td>Null</td><td><code>"middlename": null</code></td></tr>
+      </table>
+    </div>
+
+    <div class="section-block" id="parse">
+      <h2>JSON.parse()</h2>
+      <p>Converts a JSON <strong>string</strong> into a JavaScript <strong>object</strong>. Used when receiving data from a server.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> obj = JSON.<span class="fn">parse</span>(jsonString);</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> jsonStr = <span class="str">'{"name":"Alice","age":20}'</span>;
+<span class="kw">var</span> person = JSON.<span class="fn">parse</span>(jsonStr);
+
+person.name   <span class="cm">// "Alice"</span>
+person.age    <span class="cm">// 20</span></div>
+    </div>
+
+    <div class="section-block" id="stringify">
+      <h2>JSON.stringify()</h2>
+      <p>Converts a JavaScript <strong>object</strong> into a JSON <strong>string</strong>. Used when sending data to a server.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> str = JSON.<span class="fn">stringify</span>(object);</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> student = {
+  name: <span class="str">"Alice"</span>,
+  age: <span class="num">20</span>,
+  enrolled: <span class="kw">true</span>
+};
+<span class="kw">var</span> json = JSON.<span class="fn">stringify</span>(student);
+<span class="cm">// '{"name":"Alice","age":20,"enrolled":true}'</span></div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — JSON Converter</h2>
+      <p>Use the tabs to convert between a JavaScript object and a JSON string.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <div style="display:flex;gap:8px;margin-bottom:14px;">
+          <button class="btn-run" onclick="switchTab('parse')" id="tab-parse">JSON.parse()</button>
+          <button class="btn-run" style="background:var(--green)" onclick="switchTab('stringify')" id="tab-stringify">JSON.stringify()</button>
+        </div>
+
+        <!-- PARSE TAB -->
+        <div id="tab-parse-content">
+          <label style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:6px;">Enter a JSON string:</label>
+          <textarea id="json-parse-input" class="tryit-textarea" rows="4">{"name": "Alice", "age": 20, "enrolled": true}</textarea>
+          <button class="btn-run" onclick="runParse()">▶ Parse</button>
+          <button class="btn-clear" onclick="clearJSON()">✕ Clear</button>
+        </div>
+
+        <!-- STRINGIFY TAB -->
+        <div id="tab-stringify-content" style="display:none;">
+          <label style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:6px;">Enter a JS Object (key: value pairs):</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+            <input type="text" id="obj-key1" class="tryit-input" placeholder="Key 1" value="name"/>
+            <input type="text" id="obj-val1" class="tryit-input" placeholder="Value 1" value="Alice"/>
+            <input type="text" id="obj-key2" class="tryit-input" placeholder="Key 2" value="age"/>
+            <input type="text" id="obj-val2" class="tryit-input" placeholder="Value 2" value="20"/>
+            <input type="text" id="obj-key3" class="tryit-input" placeholder="Key 3 (optional)" value="course"/>
+            <input type="text" id="obj-val3" class="tryit-input" placeholder="Value 3 (optional)" value="IT"/>
+          </div>
+          <button class="btn-run" style="background:var(--green)" onclick="runStringify()">▶ Stringify</button>
+          <button class="btn-clear" onclick="clearJSON()">✕ Clear</button>
+        </div>
+
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="json-output">Output will appear here...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="dom.html" class="btn-nav">← JavaScript DOM</a>
+  <a href="../index.html" class="btn-nav">↩ Back to Home</a>
+</div>
+
+<script src="../assets/js/json.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Types – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 4</div>
+  <h1>🔢 <span>Data Types</span></h1>
+  <p>JavaScript is loosely typed — you don't declare a type. The same variable can hold any type of value.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#string">String</a></li>
+      <li><a href="#number">Number</a></li>
+      <li><a href="#boolean">Boolean</a></li>
+      <li><a href="#array">Array</a></li>
+      <li><a href="#object">Object</a></li>
+      <li><a href="#null-undef">Null & Undefined</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <div class="section-block" id="string">
+      <h2>String</h2>
+      <p>A sequence of characters enclosed in single or double quotes. You can access individual characters by index (starts at 0).</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> name = <span class="str">"Hello World"</span>;</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> str = <span class="str">'Hello World'</span>;
+str[<span class="num">0</span>]       <span class="cm">// "H"</span>
+str[<span class="num">6</span>]       <span class="cm">// "W"</span>
+str.length   <span class="cm">// 11</span></div>
+    </div>
+
+    <div class="section-block" id="number">
+      <h2>Number</h2>
+      <p>JS has one number type that covers integers, decimals, hex, binary, and more.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> num = <span class="num">100</span>;</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> a = <span class="num">100</span>;       <span class="cm">// integer</span>
+<span class="kw">var</span> b = <span class="num">-100</span>;      <span class="cm">// negative</span>
+<span class="kw">var</span> c = <span class="num">10.52</span>;     <span class="cm">// decimal (float)</span>
+<span class="kw">var</span> d = <span class="num">0xfff</span>;     <span class="cm">// hexadecimal</span>
+<span class="kw">var</span> e = <span class="num">256e-5</span>;    <span class="cm">// exponential</span></div>
+    </div>
+
+    <div class="section-block" id="boolean">
+      <h2>Boolean</h2>
+      <p>Only two values: <code>true</code> or <code>false</code>. Commonly used in conditions.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> flag = <span class="kw">true</span>;</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> isLoggedIn = <span class="kw">true</span>;
+<span class="kw">var</span> hasError = <span class="kw">false</span>;
+
+<span class="kw">if</span> (isLoggedIn) {
+  <span class="fn">alert</span>(<span class="str">"Welcome back!"</span>);
+}</div>
+    </div>
+
+    <div class="section-block" id="array">
+      <h2>Array</h2>
+      <p>An ordered list of values stored in a single variable. Items are accessed by index starting at 0.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> arr = [value1, value2, value3];</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> fruits = [<span class="str">"apple"</span>, <span class="str">"banana"</span>, <span class="str">"mango"</span>];
+<span class="kw">var</span> nums   = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>];
+<span class="kw">var</span> mixed  = [<span class="num">1</span>, <span class="str">"two"</span>, <span class="kw">true</span>];
+
+fruits[<span class="num">0</span>]        <span class="cm">// "apple"</span>
+fruits.length    <span class="cm">// 3</span></div>
+    </div>
+
+    <div class="section-block" id="object">
+      <h2>Object</h2>
+      <p>A collection of key-value pairs (properties). Defined with curly braces.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> obj = { key: value, key2: value2 };</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> student = {
+  name: <span class="str">"Alice"</span>,
+  age: <span class="num">20</span>,
+  course: <span class="str">"IT"</span>
+};
+
+student.name   <span class="cm">// "Alice"</span>
+student.age    <span class="cm">// 20</span></div>
+    </div>
+
+    <div class="section-block" id="null-undef">
+      <h2>Null &amp; Undefined</h2>
+      <p><strong>Null</strong> — intentionally empty. <strong>Undefined</strong> — declared but no value assigned yet.</p>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> x = <span class="kw">null</span>;
+<span class="fn">alert</span>(x);     <span class="cm">// null</span>
+
+<span class="kw">var</span> y;
+<span class="fn">alert</span>(y);     <span class="cm">// undefined</span></div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Detect Data Type</h2>
+      <p>Enter any value and the tool will detect its JavaScript data type using <code>typeof</code>.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <input type="text" id="type-input" class="tryit-input" placeholder='e.g. "Hello", 42, true, [1,2,3]' value="Hello World"/>
+        <button class="btn-run" onclick="runTypeCheck()">▶ Check Type</button>
+        <button class="btn-clear" onclick="clearTypeCheck()">✕ Clear</button>
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="type-output">Enter a value and click Check Type...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="variables.html" class="btn-nav">← Variables</a>
+  <a href="operators.html" class="btn-nav">Next: Operators →</a>
+</div>
+
+<script src="../assets/js/data-types.js"></script>
+</body>
+</html>

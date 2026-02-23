@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript DOM – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+  <style>
+    .demo-box { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; }
+    .demo-box p { color: var(--muted); margin: 0; }
+    #dom-list { padding-left: 18px; color: var(--muted); }
+    #dom-list li { margin: 4px 0; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 8</div>
+  <h1>🌲 <span>JavaScript DOM</span></h1>
+  <p>The Document Object Model (DOM) lets JavaScript access and change all HTML elements on a page.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#what-dom">What is the DOM?</a></li>
+      <li><a href="#getbyid">getElementById()</a></li>
+      <li><a href="#query">querySelector()</a></li>
+      <li><a href="#queryall">querySelectorAll()</a></li>
+      <li><a href="#create">createElement()</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <div class="section-block" id="what-dom">
+      <h2>What is the DOM?</h2>
+      <p>When a browser loads an HTML page, it creates a <strong>tree structure</strong> of all elements. JavaScript can navigate and modify this tree to make pages dynamic.</p>
+      <p>Using the DOM, JavaScript can:</p>
+      <ul>
+        <li>Change HTML elements and attributes</li>
+        <li>Change CSS styles</li>
+        <li>Add or remove elements</li>
+        <li>Respond to events (clicks, key presses, etc.)</li>
+      </ul>
+    </div>
+
+    <div class="section-block" id="getbyid">
+      <h2>getElementById()</h2>
+      <p>Selects a single element by its unique <code>id</code>. Returns <code>null</code> if not found.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block">document.<span class="fn">getElementById</span>(<span class="str">"id-name"</span>);</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="cm">// HTML: &lt;p id="para1"&gt;Hello!&lt;/p&gt;</span>
+
+<span class="kw">const</span> para = document.<span class="fn">getElementById</span>(<span class="str">"para1"</span>);
+para.textContent = <span class="str">"Text changed by JS!"</span>;
+para.style.color = <span class="str">"#f0c040"</span>;</div>
+    </div>
+
+    <div class="section-block" id="query">
+      <h2>querySelector()</h2>
+      <p>Selects the <strong>first</strong> element matching a CSS selector. Use <code>.</code> for class, <code>#</code> for id, or tag name directly.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block">document.<span class="fn">querySelector</span>(<span class="str">"selector"</span>);</div>
+      <div class="example-label">Example</div>
+      <div class="code-block">document.<span class="fn">querySelector</span>(<span class="str">"h1"</span>);       <span class="cm">// first &lt;h1&gt;</span>
+document.<span class="fn">querySelector</span>(<span class="str">".card"</span>);    <span class="cm">// first element with class="card"</span>
+document.<span class="fn">querySelector</span>(<span class="str">"#title"</span>);   <span class="cm">// element with id="title"</span></div>
+    </div>
+
+    <div class="section-block" id="queryall">
+      <h2>querySelectorAll()</h2>
+      <p>Returns a <strong>NodeList</strong> (like an array) of ALL elements matching the selector.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block">document.<span class="fn">querySelectorAll</span>(<span class="str">"selector"</span>);</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">const</span> items = document.<span class="fn">querySelectorAll</span>(<span class="str">"ul &gt; li"</span>);
+items.<span class="fn">forEach</span>(<span class="kw">function</span>(item) {
+  item.style.color = <span class="str">"#3ecf8e"</span>;
+});</div>
+    </div>
+
+    <div class="section-block" id="create">
+      <h2>createElement() &amp; appendChild()</h2>
+      <p>Create new HTML elements and add them to the page.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> el = document.<span class="fn">createElement</span>(<span class="str">"tagName"</span>);
+el.textContent = <span class="str">"text"</span>;
+parentElement.<span class="fn">appendChild</span>(el);</div>
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> ul = document.<span class="fn">createElement</span>(<span class="str">"ul"</span>);
+<span class="kw">var</span> li = document.<span class="fn">createElement</span>(<span class="str">"li"</span>);
+li.textContent = <span class="str">"New item added by JS"</span>;
+ul.<span class="fn">appendChild</span>(li);
+document.body.<span class="fn">appendChild</span>(ul);</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Live DOM Manipulation</h2>
+      <p>Use the controls below to interact with the DOM elements on this page in real time.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+
+        <!-- Demo target element -->
+        <div class="demo-box">
+          <p id="dom-demo-text">👋 This paragraph is your target element  (id="dom-demo-text")</p>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+          <button class="btn-run" onclick="domChangeText()">Change Text</button>
+          <button class="btn-run" style="background:var(--green)" onclick="domChangeColor()">Change Color</button>
+          <button class="btn-run" style="background:var(--blue);color:#fff" onclick="domChangeBg()">Change BG</button>
+          <button class="btn-clear" onclick="domReset()">↺ Reset</button>
+        </div>
+
+        <div style="margin-bottom:10px;">
+          <label style="font-size:0.82rem;color:var(--muted);">Add a list item:</label>
+          <div style="display:flex;gap:8px;margin-top:6px;">
+            <input type="text" id="list-input" class="tryit-input" style="margin-bottom:0;" placeholder="Type an item..."/>
+            <button class="btn-run" onclick="domAddItem()">Add</button>
+          </div>
+        </div>
+        <ul id="dom-list" style="min-height:20px;"></ul>
+
+        <div class="output-label" style="margin-top:12px;">Console Log</div>
+        <div class="output-area empty" id="dom-output">DOM actions will be logged here...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="loops.html" class="btn-nav">← Loops</a>
+  <a href="json.html" class="btn-nav">Next: JSON →</a>
+</div>
+
+<script src="../assets/js/dom.js"></script>
+</body>
+</html>

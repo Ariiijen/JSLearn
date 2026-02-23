@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Embedding JavaScript – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics </a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 1</div>
+  <h1>📌 <span>Embedding</span> JavaScript</h1>
+  <p>Learn how to add JavaScript to your HTML pages using &lt;script&gt; tags — inline or from an external file.</p>
+</div>
+
+<div class="topic-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#inline-head" class="active">JS in &lt;head&gt;</a></li>
+      <li><a href="#inline-body">JS in &lt;body&gt;</a></li>
+      <li><a href="#external">External JS File</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="topic-content">
+
+    <!-- JS IN HEAD -->
+    <div class="section-block" id="inline-head">
+      <h2>JavaScript in &lt;head&gt;</h2>
+      <p>You can place a <code>&lt;script&gt;</code> tag inside the <code>&lt;head&gt;</code> section. The script runs before the page body is loaded.</p>
+
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;script&gt;</span>
+    <span class="cm">// your JavaScript here</span>
+  <span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span></div>
+
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;script&gt;</span>
+    <span class="fn">alert</span>(<span class="str">"Hello from the head!"</span>);
+  <span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h2&gt;</span>JavaScript in Head<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;/body&gt;</span></div>
+    </div>
+
+    <!-- JS IN BODY -->
+    <div class="section-block" id="inline-body">
+      <h2>JavaScript in &lt;body&gt;</h2>
+      <p>Placing <code>&lt;script&gt;</code> at the end of <code>&lt;body&gt;</code> is often preferred — the HTML loads first, then the script runs.</p>
+
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="tag">&lt;body&gt;</span>
+  <span class="cm">&lt;!-- HTML content --&gt;</span>
+  <span class="tag">&lt;script&gt;</span>
+    <span class="cm">// your JavaScript here</span>
+  <span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span></div>
+
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h2&gt;</span>My Page<span class="tag">&lt;/h2&gt;</span>
+  <span class="tag">&lt;script&gt;</span>
+    <span class="fn">alert</span>(<span class="str">"Hello from the body!"</span>);
+  <span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span></div>
+    </div>
+
+    <!-- EXTERNAL JS -->
+    <div class="section-block" id="external">
+      <h2>External JavaScript File</h2>
+      <p>Save your JS in a separate <code>.js</code> file and link it with the <code>src</code> attribute. This is the most common real-world approach.</p>
+
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="tag">&lt;script</span> <span class="attr">src=</span><span class="str">"filename.js"</span><span class="tag">&gt;&lt;/script&gt;</span></div>
+
+      <div class="example-label">3 Ways to Reference</div>
+      <div class="code-block"><span class="cm">// Full URL</span>
+<span class="tag">&lt;script</span> <span class="attr">src=</span><span class="str">"https://example.com/js/script.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="cm">// File path</span>
+<span class="tag">&lt;script</span> <span class="attr">src=</span><span class="str">"/js/script.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="cm">// Same folder</span>
+<span class="tag">&lt;script</span> <span class="attr">src=</span><span class="str">"script.js"</span><span class="tag">&gt;&lt;/script&gt;</span></div>
+
+      <div class="warn-box"><strong>⚠ Warning:</strong> External script files cannot contain <code>&lt;script&gt;</code> tags inside them — only plain JavaScript code.</div>
+    </div>
+
+    <!-- ADVANTAGES -->
+    <div class="section-block" id="advantages">
+      <h2>Advantages of External JS</h2>
+      <ul>
+        <li>Separates HTML and JavaScript code — cleaner files</li>
+        <li>Easier to read, maintain, and debug</li>
+        <li>One file can be reused across many pages</li>
+        <li>Browsers cache the JS file — speeds up page loads</li>
+      </ul>
+      <div class="info-box"><strong>Tip:</strong> When adding multiple JS files to one page, just add multiple <code>&lt;script&gt;</code> tags one after another.</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Write to the Page</h2>
+      <p>Type a message and click Run to write it to the output area using <code>document.write()</code>-style JS output.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <label style="font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px;">Your message:</label>
+        <input type="text" id="embed-msg" class="tryit-input" placeholder="Hello World!" value="Hello World!" />
+        <button class="btn-run" onclick="runEmbed()">▶ Run</button>
+        <button class="btn-clear" onclick="clearEmbed()">✕ Clear</button>
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="embed-output">Output will appear here...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="../index.html" class="btn-nav">← Back to Home</a>
+  <a href="message-boxes.html" class="btn-nav">Next: Message Boxes →</a>
+</div>
+
+<script src="../assets/js/embeddingjs.js"></script>
+</body>
+</html>

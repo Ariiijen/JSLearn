@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loops – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 7</div>
+  <h1>🔁 <span>Loops</span></h1>
+  <p>Loops let you repeat a block of code multiple times. JavaScript has <code>for</code>, <code>while</code>, and <code>for...of</code> loops.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#for">for Loop</a></li>
+      <li><a href="#while">while Loop</a></li>
+      <li><a href="#for-of">for...of Loop</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <div class="section-block" id="for">
+      <h2>for Loop</h2>
+      <p>Best when you know exactly how many times to repeat. Has three parts: <em>initializer</em>, <em>condition</em>, <em>iteration</em>.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">for</span> (initializer; condition; iteration) {
+  <span class="cm">// code to repeat</span>
+}</div>
+      <div class="example-label">Example — Count 0 to 4</div>
+      <div class="code-block"><span class="kw">for</span> (<span class="kw">var</span> i = <span class="num">0</span>; i < <span class="num">5</span>; i++) {
+  console.<span class="fn">log</span>(i);
+}
+<span class="cm">// Output: 0  1  2  3  4</span></div>
+    </div>
+
+    <div class="section-block" id="while">
+      <h2>while Loop</h2>
+      <p>Repeats as long as a condition stays true. You control the counter manually.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">while</span> (condition) {
+  <span class="cm">// code to repeat</span>
+}</div>
+      <div class="example-label">Example — Count 0 to 4</div>
+      <div class="code-block"><span class="kw">var</span> i = <span class="num">0</span>;
+<span class="kw">while</span> (i < <span class="num">5</span>) {
+  console.<span class="fn">log</span>(i);
+  i++;
+}
+<span class="cm">// Output: 0  1  2  3  4</span></div>
+    </div>
+
+    <div class="section-block" id="for-of">
+      <h2>for...of Loop</h2>
+      <p>Loops through the elements of an iterable (array, string, map) one by one.</p>
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">for</span> (<span class="kw">const</span> item <span class="kw">of</span> iterable) {
+  <span class="cm">// code for each item</span>
+}</div>
+      <div class="example-label">Example — Iterate Array & String</div>
+      <div class="code-block"><span class="cm">// Array iteration</span>
+<span class="kw">const</span> fruits = [<span class="str">"apple"</span>, <span class="str">"mango"</span>, <span class="str">"banana"</span>];
+<span class="kw">for</span> (<span class="kw">const</span> fruit <span class="kw">of</span> fruits) {
+  console.<span class="fn">log</span>(fruit);
+}
+<span class="cm">// Output: apple  mango  banana</span>
+
+<span class="cm">// String iteration</span>
+<span class="kw">const</span> name = <span class="str">"JS"</span>;
+<span class="kw">for</span> (<span class="kw">const</span> ch <span class="kw">of</span> name) {
+  console.<span class="fn">log</span>(ch);
+}
+<span class="cm">// Output: J  S</span></div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Loop Visualizer</h2>
+      <p>Choose a loop type, set start/end values, and see each iteration printed out.</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:center;">
+          <div>
+            <label style="font-size:0.82rem;color:var(--muted);">Loop type</label>
+            <select id="loop-type" style="display:block;background:var(--code-bg);color:var(--text);border:1px solid var(--border);padding:9px 12px;border-radius:6px;margin-top:4px;">
+              <option value="for">for loop</option>
+              <option value="while">while loop</option>
+              <option value="forof">for...of (array)</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:0.82rem;color:var(--muted);">Start</label>
+            <input type="number" id="loop-start" class="tryit-input" style="display:block;width:80px;margin-top:4px;" value="0"/>
+          </div>
+          <div>
+            <label style="font-size:0.82rem;color:var(--muted);">End (< )</label>
+            <input type="number" id="loop-end" class="tryit-input" style="display:block;width:80px;margin-top:4px;" value="5"/>
+          </div>
+        </div>
+        <button class="btn-run" onclick="runLoop()">▶ Run Loop</button>
+        <button class="btn-clear" onclick="clearLoop()">✕ Clear</button>
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="loop-output">Output will appear here...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="selection.html" class="btn-nav">← Selection Structures</a>
+  <a href="dom.html" class="btn-nav">Next: JavaScript DOM →</a>
+</div>
+
+<script src="../assets/js/loops.js"></script>
+</body>
+</html>

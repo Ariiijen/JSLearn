@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Message Boxes – JSLearn</title>
+  <link rel="stylesheet" href="../assets/css/topics.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-logo"><a href="../index.html">JS<span>Learn</span></a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="active">Topics</a>
+      <ul class="dropdown-menu">
+        <li><a href="embedding.html">Embedding JavaScript</a></li>
+        <li><a href="message-boxes.html">Message Boxes</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="data-types.html">Data Types</a></li>
+        <li><a href="operators.html">Operators</a></li>
+        <li><a href="selection.html" class="active">Selection Structures</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="dom.html">JavaScript DOM</a></li>
+        <li><a href="json.html">JSON</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="topic-header">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › Topic 2</div>
+  <h1>💬 <span>Message Boxes</span></h1>
+  <p>JavaScript provides three built-in popup functions to communicate with users: <code>alert()</code>, <code>confirm()</code>, and <code>prompt()</code>.</p>
+</div>
+
+<div class="topic-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <ul>
+      <li><a href="#alert">alert()</a></li>
+      <li><a href="#confirm">confirm()</a></li>
+      <li><a href="#prompt">prompt()</a></li>
+      <li><a href="#tryit">Try It</a></li>
+    </ul>
+  </aside>
+
+  <main class="topic-content">
+
+    <!-- ALERT -->
+    <div class="section-block" id="alert">
+      <h2>alert() — Simple Message</h2>
+      <p>Displays a message to the user. Has only an <strong>OK</strong> button. Use it to show important notices.</p>
+
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="fn">alert</span>(message);</div>
+
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="fn">alert</span>(<span class="str">"This is an alert box."</span>);
+<span class="fn">alert</span>(<span class="num">42</span>);         <span class="cm">// numbers work too</span>
+<span class="fn">alert</span>(<span class="kw">true</span>);       <span class="cm">// booleans work too</span></div>
+      <div class="info-box"><strong>Note:</strong> <code>alert()</code> accepts any data type — strings, numbers, booleans — no conversion needed.</div>
+    </div>
+
+    <!-- CONFIRM -->
+    <div class="section-block" id="confirm">
+      <h2>confirm() — Yes or No</h2>
+      <p>Shows a message with <strong>OK</strong> and <strong>Cancel</strong> buttons. Returns <code>true</code> if OK is clicked, <code>false</code> if Cancel.</p>
+
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="kw">var</span> result = <span class="fn">confirm</span>(message);</div>
+
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> choice;
+<span class="kw">if</span> (<span class="fn">confirm</span>(<span class="str">"Do you want to save changes?"</span>) == <span class="kw">true</span>) {
+  choice = <span class="str">"Data saved!"</span>;
+} <span class="kw">else</span> {
+  choice = <span class="str">"Save cancelled."</span>;
+}
+<span class="fn">alert</span>(choice);</div>
+    </div>
+
+    <!-- PROMPT -->
+    <div class="section-block" id="prompt">
+      <h2>prompt() — Ask for Input</h2>
+      <p>Displays a text input box. The first parameter is the message; the second is the default value shown in the input field. Returns the typed value, or <code>null</code> if cancelled.</p>
+
+      <div class="syntax-label">Syntax</div>
+      <div class="code-block"><span class="fn">prompt</span>(message, defaultValue);</div>
+
+      <div class="example-label">Example</div>
+      <div class="code-block"><span class="kw">var</span> age = <span class="fn">prompt</span>(<span class="str">"Please enter your age"</span>, <span class="str">"18"</span>);
+
+<span class="kw">if</span> (age != <span class="kw">null</span>) {
+  <span class="fn">alert</span>(<span class="str">"You are "</span> + age + <span class="str">" years old"</span>);
+}</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="section-block" id="tryit">
+      <h2>Try It — Simulate All Three</h2>
+      <p>Click each button below to simulate the three message box types. Output is shown in the result area (no real browser popups).</p>
+      <div class="tryit-box">
+        <h3>Live Demo</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+          <button class="btn-run" onclick="runAlert()">alert()</button>
+          <button class="btn-run" style="background:var(--green);" onclick="runConfirm()">confirm()</button>
+          <button class="btn-run" style="background:var(--blue);color:#fff;" onclick="runPrompt()">prompt()</button>
+          <button class="btn-clear" onclick="clearMsgOutput()">✕ Clear</button>
+        </div>
+        <label style="font-size:0.85rem;color:var(--muted);display:block;margin-bottom:6px;">Custom message (optional):</label>
+        <input type="text" id="msg-input" class="tryit-input" placeholder="Enter your message..." />
+        <div class="output-label" style="margin-top:12px;">Output</div>
+        <div class="output-area empty" id="msg-output">Click a button to test...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="nav-buttons">
+  <a href="embedding.html" class="btn-nav">← Embedding JS</a>
+  <a href="variables.html" class="btn-nav">Next: Variables →</a>
+</div>
+
+<script src="../assets/js/message-boxes.js"></script>
+</body>
+</html>
